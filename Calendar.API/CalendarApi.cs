@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -96,9 +97,8 @@ namespace Calendar.API
             return numberOfCalendars;
         }
 
-        public static async Task<int> GetEvents(string calendarId)
+        public static async Task<List<Event>> GetEvents(string calendarId)
         {
-            int numberOfEvents = 0;
             UserCredential credential;
 
             if (string.IsNullOrEmpty(calendarId))
@@ -138,17 +138,16 @@ namespace Calendar.API
             Console.WriteLine("Calendar Events");
             if (events.Items != null)
             {
-                numberOfEvents = events.Items.Count;
                 foreach (var item in events.Items)
                 {
                     Console.WriteLine(item.Id);
                 }
             }
 
-            return numberOfEvents;
+            return (List<Event>)events.Items;
         }
 
-        public static async Task<Event> CreateEvent(string calendarId)
+        public static async Task<Event> CreateEvent(string calendarId, string summary, string description, DateTime startTime, TimeSpan duration)
         {
             UserCredential credential;
             if (string.IsNullOrEmpty(calendarId))
@@ -158,7 +157,16 @@ namespace Calendar.API
 
             CalendarService service;
             SetupRequest(out credential, out service);
-            EventsResource.QuickAddRequest request = service.Events.QuickAdd(calendarId, "test Event");
+            var @event = new Event();
+            var eventStartTime = new EventDateTime();
+            var eventEndTime = new EventDateTime();
+            eventStartTime.DateTime = startTime;
+            eventEndTime.DateTime = startTime.Add(duration);
+            @event.Start = eventStartTime;
+            @event.End = eventEndTime;
+            @event.Description = description;
+            @event.Summary = summary;
+            var request = service.Events.Insert(@event, calendarId);
             var result = await request.ExecuteAsync();
             if (result != null)
             {
