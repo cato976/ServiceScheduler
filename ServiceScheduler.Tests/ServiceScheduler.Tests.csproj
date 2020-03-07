@@ -12,5 +12,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ServiceScheduler\ServiceScheduler.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
