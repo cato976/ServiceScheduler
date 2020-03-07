@@ -20,7 +20,7 @@ namespace ServiceScheduler
             InitConfigValues(config);
             //int result = GetNumberOfCalendars().Result;
             //int result = Calendar.API.CalendarApi.GetEvents(CalendarId).Result;
-            Event result = Calendar.API.CalendarApi.CreateEvent(CalendarId).Result;
+            //Event result = Calendar.API.CalendarApi.CreateEvent(CalendarId).Result;
         }
 
         private static void InitConfigValues(IConfiguration config)
