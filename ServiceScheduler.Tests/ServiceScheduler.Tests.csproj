@@ -11,6 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ServiceScheduler\ServiceScheduler.csproj" />
+    <ProjectReference Include="..\Calendar.API\Calendar.API.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />

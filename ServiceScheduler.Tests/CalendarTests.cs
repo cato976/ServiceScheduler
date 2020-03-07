@@ -3,6 +3,8 @@ using Should;
 using Microsoft.Extensions.Configuration;
 using System;
 
+using Calendar.API;
+
 namespace ServiceScheduler.Tests
 {
     [TestFixture]
@@ -23,14 +25,14 @@ namespace ServiceScheduler.Tests
         [Test]
         public void GetNumberOfCalendars()
         {
-            int numberOfCalendars = Program.GetNumberOfCalendars().Result;
+            int numberOfCalendars = CalendarApi.GetNumberOfCalendars().Result;
             numberOfCalendars.ShouldBeGreaterThanOrEqualTo(1);
         }
 
         [Test]
         public void Get10Events()
         {
-            int numberOfEvents = Program.GetEvents(CalendarId).Result;
+            int numberOfEvents = CalendarApi.GetEvents(CalendarId).Result;
             numberOfEvents.ShouldBeGreaterThanOrEqualTo(1);
         }
 

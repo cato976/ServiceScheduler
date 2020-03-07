@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
@@ -6,6 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceScheduler", "ServiceScheduler\ServiceScheduler.csproj", "{46530FD0-5D05-4828-AAAC-C83417F0EB1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceScheduler.Tests", "ServiceScheduler.Tests\ServiceScheduler.Tests.csproj", "{81DFC3B2-8FC5-482B-A2DD-E2ED258C084D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.API", "Calendar.API\Calendar.API.csproj", "{C103732D-27FB-4E83-ABB7-A1AE260276FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{81DFC3B2-8FC5-482B-A2DD-E2ED258C084D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DFC3B2-8FC5-482B-A2DD-E2ED258C084D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DFC3B2-8FC5-482B-A2DD-E2ED258C084D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C103732D-27FB-4E83-ABB7-A1AE260276FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C103732D-27FB-4E83-ABB7-A1AE260276FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C103732D-27FB-4E83-ABB7-A1AE260276FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C103732D-27FB-4E83-ABB7-A1AE260276FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -29,4 +35,3 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
-
