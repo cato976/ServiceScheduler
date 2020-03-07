@@ -5,3 +5,7 @@ nuget NUnit.Runners
 nuget NUnit
 nuget NUnit3TestAdapter
 nuget Should
+nuget Google.Apis.Calendar.v3
+nuget Google.Apis.Discovery.v1
+nuget Microsoft.Extensions.Configuration
+nuget Microsoft.Extensions.Configuration.Json
