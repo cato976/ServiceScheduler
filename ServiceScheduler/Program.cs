@@ -2,6 +2,7 @@ using System;
 using Microsoft.Extensions.Configuration;
 
 using Calendar.API;
+using Google.Apis.Calendar.v3.Data;
 
 namespace ServiceScheduler
 {
@@ -18,7 +19,8 @@ namespace ServiceScheduler
 
             InitConfigValues(config);
             //int result = GetNumberOfCalendars().Result;
-            int result = Calendar.API.CalendarApi.GetEvents(CalendarId).Result;
+            //int result = Calendar.API.CalendarApi.GetEvents(CalendarId).Result;
+            Event result = Calendar.API.CalendarApi.CreateEvent(CalendarId).Result;
         }
 
         private static void InitConfigValues(IConfiguration config)

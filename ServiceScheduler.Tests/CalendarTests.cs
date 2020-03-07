@@ -36,6 +36,14 @@ namespace ServiceScheduler.Tests
             numberOfEvents.ShouldBeGreaterThanOrEqualTo(1);
         }
 
+        [Test]
+        public void CreateEvent()
+        {
+            var @event = CalendarApi.CreateEvent(CalendarId).Result;
+            @event.ShouldNotBeNull();
+            CalendarApi.DeleteEvent(CalendarId, @event.Id);
+        }
+
         private static void InitConfigValues(IConfiguration config)
         {
             CalendarId = config.GetSection("CalendarId").GetSection("CalendarId").Value;
